@@ -36,7 +36,7 @@ def format_file_name():
 
 try:
     logger.info("Starting the application")
-    resp = requests.get("http://127.0.0.1/api/warnings").json()
+    resp = requests.get("http://host.docker.internal/api/warnings").json()
     # resp = {'3a066711-48cb-71cf-17c8-5288f370c008': {'Database': 'MinvoiceCloud', 'Host': '103.61.122.194', 'Password': 'Minvoice@123', 'Port': '5432', 'User ID': 'minvoice'}}
     out = defaultdict(list)
 
