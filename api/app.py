@@ -6,18 +6,26 @@ import json
 import psycopg2
 from flask import jsonify, Flask, request
 from config import Config
-from flask_jwt_extended import jwt_required, JWTManager
+from flask_jwt_extended import create_access_token, jwt_required, JWTManager, get_jwt
 
 app = Flask(__name__)
-app.config["JWT_SECRET_KEY"] = "hungth_minvoice@123"  # Replace with a strong secret
+# Replace with a strong secret
+app.config["JWT_SECRET_KEY"] = Config.SECRET_KEY
 jwt = JWTManager(app)
 
 app.config.from_object(Config)
 
 
+@app.route("/api/token")
+def get_token():
+    access_token = create_access_token(identity=app.config["JWT_SECRET_KEY"])
+    return jsonify(access_token=access_token)
+
+
 @app.route("/api/count")
-# @jwt_required()
+@jwt_required()
 def count_sendinginvoices():
+    print(get_jwt())
     # start, end
     start_date = request.args.get('start')
     end_date = request.args.get('end')
@@ -40,10 +48,10 @@ def count_sendinginvoices():
                 res = json.load(jf)
                 ans.extend(res)
 
-    count_taxcodes = len(set(x["Taxcode"] for x in ans))
+    count_taxcodes = len(set(x["TaxCode"] for x in ans))
 
     companies = [
-        f'{company_info["Taxcode"]} - {company_info["SellerLegalName"]}'
+        f'{company_info["TaxCode"]} - {company_info["SellerLegalName"]}'
         for company_info in ans
     ]
 
