@@ -9,7 +9,7 @@ from collections import defaultdict
 from urllib.parse import quote_plus
 from config import Config
 from sqlalchemy import create_engine
-
+from constants import *
 from datetime import datetime as dt
 import logging
 
@@ -33,10 +33,46 @@ def format_file_name():
     dot_index = now.rfind('.')
     return now[:dot_index].replace(' ', '_').replace('-', '').replace(':', '-')
 
+def get_warnings():
+    def get_info(host_slave, item: str) -> dict:
+        res = {}
 
+        for item in item.split(';')[:-1]:
+            key, value = item.split('=')
+            res[key] = value
+
+        res["Host"] = host_slave
+        return res
+
+    try:
+        with open("resources/sql/connect.sql") as file:
+            tenant_sql = file.read().strip()
+
+        conn = psycopg2.connect(Config.DATABASE_URI)
+
+        cur = conn.cursor()
+        cur.execute(tenant_sql)
+
+        ans = {}
+
+        for tenantid, name, connectionstring in cur:
+            if HOST_MASTER_1 in connectionstring:
+                ans[tenantid] = get_info(HOST_SLAVE_1, connectionstring)
+            elif HOST_MASTER_2 in connectionstring:
+                ans[tenantid] = get_info(HOST_SLAVE_2, connectionstring)
+
+        cur.close()
+        conn.close()
+
+        return ans
+
+    except Exception as e:
+        return "Không thể kết nối tới database: " + str(e)
+    
 try:
     logger.info("Starting the application")
-    resp = requests.get("http://host.docker.internal/api/warnings").json()
+    # resp = requests.get("http://host.docker.internal/api/warnings").json()
+    resp = get_warnings()
     # resp = {'3a066711-48cb-71cf-17c8-5288f370c008': {'Database': 'MinvoiceCloud', 'Host': '103.61.122.194', 'Password': 'Minvoice@123', 'Port': '5432', 'User ID': 'minvoice'}}
     out = defaultdict(list)
 

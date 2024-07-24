@@ -6,13 +6,17 @@ import json
 import psycopg2
 from flask import jsonify, Flask, request
 from config import Config
-from constants import *
+from flask_jwt_extended import jwt_required, JWTManager
 
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] = "hungth_minvoice@123"  # Replace with a strong secret
+jwt = JWTManager(app)
+
 app.config.from_object(Config)
 
 
 @app.route("/api/count")
+# @jwt_required()
 def count_sendinginvoices():
     # start, end
     start_date = request.args.get('start')
