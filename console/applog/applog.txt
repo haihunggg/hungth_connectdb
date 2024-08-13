@@ -1,0 +1,231 @@
+2024-08-13 14:47:06,457 - INFO - main_app.py:91 - Starting the application
+2024-08-13 15:12:37,422 - INFO - main_app.py:96 - postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0107771936: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0700773421: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5400250444: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0312391599: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-339: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106606792: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-115: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0102683789: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317872803: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317503806: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/Master_20240401: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230214: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109129611: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317887824: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-911: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20220515: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109565907: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5400307683: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317701572-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-203: Success
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-844: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317899160: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317895448: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317880515: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-111: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3500550800: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314140142-003: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/4300358259: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595-002: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-301: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106728649: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110216435-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3603529938: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-845: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/1600193281: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0312524344: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110095653: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-543: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230626: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314309166-001: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317897879: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-207: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3300364395: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-846: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109160957: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-003: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0306049362: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317895092: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230911: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0401626002: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317588567: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317786230: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-112: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20240401: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108671638: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317872948: Failed - connection to server at "10.10.12.17", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-542: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0101437558: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0306340691-010: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317896152: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317892937: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110390698: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/8058542526: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932-002: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/ Master_20230316: Failed - connection to server at "10.10.12.17", port 5432 failed: FATAL:  database " Master_20230316" does not exist
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0304757779-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-303: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317891700: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109407795: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317899259: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317717903: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/1600193281-002: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/2300104684: Success
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/Master_20240528: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3602037394-004: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0100108254: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108255388: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108777916: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-002: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0100107268: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/4300279776: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108327836: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108081491: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-765: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0316666702: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110262978: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314709816: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-205: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0401804022: Success
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-302: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317821118: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0202194005: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230731: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317892648: Failed - relation "idx_actionlog_creationtime" already exists
+
+2024-08-13 15:12:37,726 - INFO - main_app.py:98 - done
