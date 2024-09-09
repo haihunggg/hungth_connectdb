@@ -1,0 +1,51 @@
+name: hungth_action
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Docker
+      - name: Set up Docker on Windows
+        run: |
+          Start-Service docker
+          docker --version
+
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t hungth_connectdb-image:1.0.3 .
+
+      # Push Docker image to DockerHub
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Push Docker image to DockerHub
+        run: |
+          docker tag hungth_connectdb-image:1.0.3 ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+
+    steps:
+      # Pull Docker image from DockerHub
+      - name: Pull Docker image
+        run: |
+          Start-Service docker
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+
+      # Deploy Docker container
+      - name: Run Docker container
+        run: |
+          docker run -d  --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3

@@ -1,0 +1,1 @@
+2024-09-09 18:17:54,078 - INFO - main_app.py:91 - Starting the application
