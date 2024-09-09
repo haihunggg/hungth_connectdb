@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "schedule_main_app.py"]
+CMD ["python", "main_app.py"]
