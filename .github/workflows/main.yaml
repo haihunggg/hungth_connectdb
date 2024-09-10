@@ -20,7 +20,7 @@ jobs:
           python-version: '3.10.11'
 
       # Set up Docker
-      - name: Set up Docker on Windows
+      - name: check Docker
         run: |
           Start-Service docker
           docker --version
@@ -56,10 +56,10 @@ jobs:
 
     - name: Pull Docker image from DockerHub on remote server
       run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no user${{ env.SERVER_IP }} \
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis${{ env.SERVER_IP }} \
         "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
 
     - name: Run Docker container on remote server
       run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no user${{ env.SERVER_IP }} \
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis${{ env.SERVER_IP }} \
         "docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
