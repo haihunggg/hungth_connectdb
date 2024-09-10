@@ -40,17 +40,26 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
 
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
 
-    steps:
-      # Pull Docker image from DockerHub
-      - name: Pull Docker image
-        run: |
-          Start-Service docker
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+    steps:  
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      # Deploy Docker container
-      - name: Run Docker container
-        run: |
-          docker run -d  --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts
+
+    - name: Pull Docker image from DockerHub on remote server
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no user${{ env.SERVER_IP }} \
+        "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
+
+    - name: Run Docker container on remote server
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no user${{ env.SERVER_IP }} \
+        "docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
