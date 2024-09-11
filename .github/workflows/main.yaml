@@ -46,22 +46,22 @@ jobs:
     steps:  
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Install OpenVPN
-      run: 
-        sudo apt-get install openvpn
+    # - name: Install OpenVPN
+    #   run: 
+    #     sudo apt-get install openvpn
     
-    - name: Create VPN credentials file
-      run: |
-        echo "${{ secrets.VPN_USERNAME }}" > vpn_credentials.txt
-        echo "${{ secrets.VPN_PASSWORD }}" >> vpn_credentials.txt
+    # - name: Create VPN credentials file
+    #   run: |
+    #     echo "${{ secrets.VPN_USERNAME }}" > vpn_credentials.txt
+    #     echo "${{ secrets.VPN_PASSWORD }}" >> vpn_credentials.txt
 
-    - name: Configure and start VPN
-      run: |
-        echo "${{ secrets.VPN_CONFIG }}" > vpn-config.ovpn
-        sudo openvpn --config vpn-config.ovpn --auth-user-pass vpn_credentials.txt --daemon
+    # - name: Configure and start VPN
+    #   run: |
+    #     echo "${{ secrets.VPN_CONFIG }}" > vpn-config.ovpn
+    #     sudo openvpn --config vpn-config.ovpn --auth-user-pass vpn_credentials.txt --daemon
 
-    - name: Wait VPN to connect
-      run: sleep 30s
+    # - name: Wait VPN to connect
+    #   run: sleep 30s
 
     - name: Set up SSH
       run: |
@@ -72,10 +72,11 @@ jobs:
 
     - name: Pull Docker image from DockerHub on remote server
       run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
+        telnet 172.16.1.242 22
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #     "cd /minvoice/apps/watchdog-invoice && docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
 
-    - name: Run Docker container on remote server
-      run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
+    # - name: Run Docker container on remote server
+    #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #     "cd /minvoice/apps/watchdog-invoice && docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
