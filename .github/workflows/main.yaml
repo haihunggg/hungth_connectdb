@@ -34,8 +34,8 @@ jobs:
 
       - name: Push Docker image to DockerHub
         run: |
-          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker tag hungth_connectdb:1.0.4 ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4
-          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker push ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker tag hungth_connectdb:1.0.4 minvoicesys/hungth_connectdb:1.0.4
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker push minvoicesys/hungth_connectdb:1.0.4
 
   deploy:
     runs-on: self-hosted
