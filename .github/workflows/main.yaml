@@ -34,8 +34,8 @@ jobs:
 
       - name: Push Docker image to DockerHub
         run: |
-          docker tag hungth_connectdb:1.0.4 minvoicesys/hungth_connectdb:1.0.4
-          docker push minvoicesys/hungth_connectdb:1.0.4
+          sudo docker tag hungth_connectdb:1.0.4 minvoicesys/hungth_connectdb:1.0.4
+          sudo docker push minvoicesys/hungth_connectdb:1.0.4
 
   deploy:
     runs-on: self-hosted
