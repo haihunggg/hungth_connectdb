@@ -7,9 +7,8 @@ on:
 
 jobs:
   building:
-    runs-on: ubuntu-lastest
+    runs-on: windows-lastest
 
-    
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
