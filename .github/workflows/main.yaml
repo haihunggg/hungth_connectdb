@@ -22,7 +22,7 @@ jobs:
       # Set up Docker
       - name: check Docker
         run: |
-          Start-Service docker
+          sudo systemctl start docker
           docker --version
 
       # Build Docker image
