@@ -32,6 +32,7 @@ jobs:
 
       - name: Push image to DockerHub
         run: |
+          docker logout
           echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker tag hungth_connectdb:1.0.4 minvoicesys/hungth_connectdb:1.0.4
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker push minvoicesys/hungth_connectdb:1.0.4
