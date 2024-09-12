@@ -41,7 +41,7 @@ jobs:
 
   deploy:
     runs-on: self-hosted
-    # needs: build
+    needs: build
 
     steps:  
     - name: Set up SSH
