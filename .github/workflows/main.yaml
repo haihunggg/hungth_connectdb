@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: self-hosted
+  # build:
+  #   runs-on: self-hosted
 
     
     # steps:
