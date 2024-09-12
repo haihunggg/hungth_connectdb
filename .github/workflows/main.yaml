@@ -6,77 +6,60 @@ on:
       - main
 
 jobs:
-  # build:
-  #   runs-on: windows-latest
+  build:
+    runs-on: self-hosted
 
     
-  #   steps:
-  #     - name: Checkout Source
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
 
-  #     - name: Set up Python
-  #       uses: actions/setup-python@v5
-  #       with:
-  #         python-version: '3.10.11'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10.11'
 
-  #     # Set up Docker
-  #     - name: check Docker
-  #       run: |
-  #         Start-Service docker
-  #         docker --version
+      # Set up Docker
+      - name: check Docker
+        run: |
+          Start-Service docker
+          docker --version
 
-  #     # Build Docker image
-  #     - name: Build Docker image
-  #       run: |
-  #         docker build -t hungth_connectdb:1.0.3 .
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t hungth_connectdb:1.0.3 .
 
-  #     # Push Docker image to DockerHub
-  #     - name: Log in to DockerHub
-  #       run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+      # Push Docker image to DockerHub
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-  #     - name: Push Docker image to DockerHub
-  #       run: |
-  #         docker tag hungth_connectdb:1.0.3 ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
-  #         docker push ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+      - name: Push Docker image to DockerHub
+        run: |
+          docker tag hungth_connectdb:1.0.3 ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3
 
   deploy:
-    runs-on: ubuntu-latest
-    # needs: build
+    runs-on: self-hosted
+    needs: build
 
     steps:  
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Install OpenVPN
-      run: 
-       sudo apt-get install openvpn
-    
-    - name: Create VPN credentials file
-      run: |
-         echo "${{ secrets.VPN_USERNAME }}" > vpn_credentials.txt
-         echo "${{ secrets.VPN_PASSWORD }}" >> vpn_credentials.txt
-
-    - name: Configure and start VPN
-      run: |
-        echo "${{ secrets.VPN_CONFIG }}" > vpn-config.ovpn
-        sudo openvpn --config vpn-config.ovpn --auth-user-pass vpn_credentials.txt --daemon
-
-    - name: Wait VPN to connect
-      run: sleep 30s
 
     - name: Set up SSH
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts || echo "ssh-keyscan failed"
+        ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts
 
     - name: Pull Docker image from DockerHub on remote server
       run: |
-        telnet 172.16.1.242 22
-    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-    #     "cd /minvoice/apps/watchdog-invoice && docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+        "cd /minvoice/apps/watchdog-invoice && docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
 
-    # - name: Run Docker container on remote server
-    #   run: |
-    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-    #     "cd /minvoice/apps/watchdog-invoice && docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
+    - name: Run Docker container on remote server
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+        "cd /minvoice/apps/watchdog-invoice && docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.3"
