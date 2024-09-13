@@ -21,7 +21,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:1.0.4 .
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:1.0.4 .
 
   deploy:
     runs-on: self-hosted
