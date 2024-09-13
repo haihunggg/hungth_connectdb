@@ -26,7 +26,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-           docker build -t hungth_connectdb:1.0.4 .
+           sudo docker build -t hungth_connectdb:1.0.4 .
 
   deploy:
     runs-on: self-hosted
