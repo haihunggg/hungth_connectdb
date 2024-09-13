@@ -174,3 +174,206 @@ postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-765: Failed - r
 postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317895448: Failed - relation "idx_actionlog_creationtime" already exists
 
 2024-09-10 10:46:41,969 - INFO - main_app.py:98 - done
+2024-09-13 11:57:59,345 - INFO - main_app.py:91 - Starting the application
+2024-09-13 12:04:17,865 - INFO - main_app.py:91 - Starting the application
+2024-09-13 12:11:30,299 - INFO - main_app.py:96 - postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0401626002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110095653: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314140142-003: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317503806: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0107771936: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-765: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314709816: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-844: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/8058542526: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-301: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/Master_20240401: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-205: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/2300104684: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230911: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317701572-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106728649: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317880515: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317896152: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/1600193281-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-111: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0306049362: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230214: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0304757779-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0101437558: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109407795: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/Master_20240528: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106606792: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109129611: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0312524344: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-542: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110390698: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0102683789: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317588567: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109565907: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317897879: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3300364395: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-203: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0312391599: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317887824: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230731: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/ Master_20230316: Failed - connection to server at "10.10.12.17", port 5432 failed: FATAL:  database " Master_20230316" does not exist
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3602037394-004: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-112: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108255388: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317821118: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0316666702: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-302: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0700773421: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-911: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20230626: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108081491: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317786230: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317899160: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108327836: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-543: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317899259: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317872803: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20220515: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/Master_20240401: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-115: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5400250444: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108671638: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108777916: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317895092: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-207: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314716595-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110262978: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932-002: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0108475633-003: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0109160957: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5801323932: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3603529938: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0100107268: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317895448: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-846: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/1600193281: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0306340691-010: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@103.61.122.194:5432/0106026495-845: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-303: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/3500550800: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0202194005: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317872948: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317892937: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0100108254: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0106026495-339: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0110216435-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317891700: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317892648: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0317717903: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0401804022: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/0314309166-001: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/5400307683: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/4300358259: Failed - relation "idx_actionlog_creationtime" already exists
+
+postgresql://minvoice:Minvoice%40123@10.10.12.17:5432/4300279776: Failed - relation "idx_actionlog_creationtime" already exists
+
+2024-09-13 12:11:30,333 - INFO - main_app.py:98 - done
