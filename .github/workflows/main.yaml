@@ -13,11 +13,6 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10.11'
-
       # Set up Docker
       - name: check Docker
         run: |
@@ -26,7 +21,7 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-           sudo docker build -t hungth_connectdb:1.0.4 .
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:1.0.4 .
 
   deploy:
     runs-on: self-hosted
@@ -36,9 +31,10 @@ jobs:
 
     # - name: Pull Docker image from DockerHub on remote server
     #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
     #     "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
 
-    - name: Run Docker container on remote server
+    - name: Run Docker container on server
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice | sudo -S docker run -d --name hungth_connectdb:1.0.4"
+        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:1.0.4"
