@@ -28,32 +28,17 @@ jobs:
         run: |
            docker build -t hungth_connectdb:1.0.4 .
 
-      # Push Docker image to DockerHub
-
-      - name: Push image to DockerHub
-        run: |
-          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-          docker tag hungth_connectdb:1.0.4 minvoicesys/hungth_connectdb:1.0.4
-          docker push minvoicesys/hungth_connectdb:1.0.4
-
   deploy:
     runs-on: self-hosted
     needs: building
 
     steps:
-    - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts
 
-    - name: Pull Docker image from DockerHub on remote server
-      run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
+    # - name: Pull Docker image from DockerHub on remote server
+    #   run: |
+    #     "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
 
     - name: Run Docker container on remote server
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
+        "cd /minvoice/apps/watchdog-invoice | sudo -S docker run -d --name hungth_connectdb:1.0.4"
