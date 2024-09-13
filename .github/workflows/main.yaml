@@ -37,4 +37,4 @@ jobs:
     - name: Run Docker container on server
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:1.0.4"
+        "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:1.0.4"
