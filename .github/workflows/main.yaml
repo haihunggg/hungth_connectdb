@@ -59,6 +59,8 @@ jobs:
     #   run: |
     #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
     #     "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
+    - name: Print IMAGE_VERSION
+      run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
 
     - name: Run container on server
       run: |
