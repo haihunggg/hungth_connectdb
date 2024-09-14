@@ -38,15 +38,15 @@ jobs:
         run: |
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
 
-      - name: push new version to repo
+      - name: Push new version to repo
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Lấy token từ GitHub Secrets
         run: |
           git config user.name "haihunggg"
           git config user.email "github-actions@github.com"
           git add version.txt
           git commit -m "Bump version to ${{ env.IMAGE_VERSION }}"
-          git push https://haihunggg:${GITHUB_TOKEN}@github.com/haihunggg/hungth_connectdb.git
+          git push https://haihunggg:${PAT_TOKEN}@github.com/haihunggg/hungth_connectdb.git
 
 
   deploy:
