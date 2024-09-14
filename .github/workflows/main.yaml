@@ -37,7 +37,9 @@ jobs:
       - name: Build image
         run: |
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
-
+          
+      - name: Print IMAGE_VERSION
+        run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
       # - name: Push new version to repo
       #   env:
       #     PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Lấy token từ GitHub Secrets
