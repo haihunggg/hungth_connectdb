@@ -39,12 +39,15 @@ jobs:
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
 
       - name: push new version to repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "haihunggg"
           git config user.email "github-actions@github.com"
           git add version.txt
           git commit -m "Bump version to ${{ env.IMAGE_VERSION }}"
-          git push
+          git push https://haihunggg:${GITHUB_TOKEN}@github.com/haihunggg/hungth_connectdb.git
+
 
   deploy:
     runs-on: self-hosted
