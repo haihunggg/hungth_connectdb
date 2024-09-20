@@ -6,40 +6,40 @@ on:
       - main
 
 jobs:
-  building:
-    runs-on: self-hosted
+  # building:
+  #   runs-on: self-hosted
 
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout Source
+  #       uses: actions/checkout@v4
 
-      # Set up Docker
-      - name: Check Docker
-        run: |
-          docker --version
+  #     # Set up Docker
+  #     - name: Check Docker
+  #       run: |
+  #         docker --version
 
-      # Read and increment version number
-      - name: Get Current Version
-        id: versioning
-        run: |
-          VERSION=$(cat version.txt)
-          IFS='.' read -ra ADDR <<< "$VERSION"
-          MAJOR=${ADDR[0]}
-          MINOR=${ADDR[1]}
-          PATCH=${ADDR[2]}
-          PATCH=$((PATCH+1))  # Increment the PATCH version
-          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
-          echo "New version: $NEW_VERSION"
-          echo "$NEW_VERSION" > version.txt  # Save the new version back to version.txt
-          echo "IMAGE_VERSION=$NEW_VERSION" >> $GITHUB_ENV  # Pass the version to environment
+  #     # Read and increment version number
+  #     - name: Get Current Version
+  #       id: versioning
+  #       run: |
+  #         VERSION=$(cat version.txt)
+  #         IFS='.' read -ra ADDR <<< "$VERSION"
+  #         MAJOR=${ADDR[0]}
+  #         MINOR=${ADDR[1]}
+  #         PATCH=${ADDR[2]}
+  #         PATCH=$((PATCH+1))  # Increment the PATCH version
+  #         NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+  #         echo "New version: $NEW_VERSION"
+  #         echo "$NEW_VERSION" > version.txt  # Save the new version back to version.txt
+  #         echo "IMAGE_VERSION=$NEW_VERSION" >> $GITHUB_ENV  # Pass the version to environment
 
-      # Build Docker image with incremented version
-      - name: Build image
-        run: |
-          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
+  #     # Build Docker image with incremented version
+  #     - name: Build image
+  #       run: |
+  #         echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
           
-      - name: Print IMAGE_VERSION
-        run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
+  #     - name: Print IMAGE_VERSION
+  #       run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
       # - name: Push new version to repo
       #   env:
       #     PAT_TOKEN: ${{ secrets.PAT_TOKEN }}  # Lấy token từ GitHub Secrets
@@ -57,15 +57,23 @@ jobs:
 
     steps:
 
-    # - name: Pull Docker image from DockerHub on remote server
-    #   run: |
-    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-    #     "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker pull ${{ secrets.DOCKERHUB_USERNAME }}/hungth_connectdb:1.0.4"
-    - name: Print IMAGE_VERSION
-      run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
-
-    - name: Run container on server
+    - name: turnoff service 
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:${{ env.IMAGE_VERSION }}"
-      
+        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
+
+    # - name: Print IMAGE_VERSION
+    #   run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
+
+    # - name: Run container on server
+    #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #     "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:${{ env.IMAGE_VERSION }}"
+
+    # - name: Update image version in docker-compose.yml and restart service
+    #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #     echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ env.IMAGE_VERSION }}/g' /path/to/docker-compose.yml
+    #     echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose -f /path/to/docker-compose.yml up -d
+    #     EOF
+ 
