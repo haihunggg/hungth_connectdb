@@ -73,7 +73,6 @@ jobs:
     - name: Update image version in docker-compose.yml and restart service
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        # echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ env.IMAGE_VERSION }}/g' /path/to/docker-compose.yml
         "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose up -d"
         EOF
  
