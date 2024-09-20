@@ -53,7 +53,7 @@ jobs:
 
   deploy:
     runs-on: self-hosted
-    needs: building
+    # needs: building
 
     steps:
 
