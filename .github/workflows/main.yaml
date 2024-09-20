@@ -60,7 +60,7 @@ jobs:
     - name: turnoff service 
       run: |
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /minvoice/apps/watchdog-invoice && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
+        "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
 
     # - name: Print IMAGE_VERSION
     #   run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}"
