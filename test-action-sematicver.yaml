@@ -5,9 +5,15 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   building:
     runs-on: self-hosted
+
+    outputs:
+      image_version: ${{ steps.versioning.outputs.new_version }}
 
     steps:
       - name: Checkout Source
@@ -31,28 +37,44 @@ jobs:
           NEW_VERSION="$MAJOR.$MINOR.$PATCH"
           echo "New version: $NEW_VERSION"
           echo "$NEW_VERSION" > version.txt  # Save the new version back to version.txt
-          echo "IMAGE_VERSION=$NEW_VERSION" >> $GITHUB_ENV  # Pass the version to environment
+          echo "$NEW_VERSION"  # Output the new version
+        outputs:
+          new_version: $NEW_VERSION
 
       # Build Docker image with incremented version
-      - name: Build Docker image
+      - name: Build image
         run: |
-          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ env.IMAGE_VERSION }} .
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S docker build -t hungth_connectdb:${{ steps.versioning.outputs.new_version }} .
+          
+      - name: Print IMAGE_VERSION
+        run: echo "IMAGE_VERSION=${{ steps.versioning.outputs.new_version }}"
 
-      # Push updated version back to the repository
-      - name: Commit new version
+      - name: Push new version to repo
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config --global user.name "haihunggg"
+          git config --global user.email "github-actions@github.com"
           git add version.txt
-          git commit -m "Bump version to ${{ env.IMAGE_VERSION }}"
-          git push
+          git commit -m "Update version.txt to version ${{ steps.versioning.outputs.new_version }}"
+          git push origin HEAD:main
 
   deploy:
     runs-on: self-hosted
     needs: building
 
     steps:
-      - name: Run Docker container on server
-        run: |
-          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-          "echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker run -d --name hungth-dbconnect hungth_connectdb:${{ env.IMAGE_VERSION }}"
+
+    - name: Off service 
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+        "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
+
+    - name: Print IMAGE_VERSION from building job
+      run: echo "IMAGE_VERSION=${{ needs.building.outputs.image_version }}"
+
+    - name: Update image version and restart service
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+          cd /home/jarvis/minvoice/apps/watchdog-invoice/ &&
+          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ needs.building.outputs.image_version }}/g' docker-compose.yml
+          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose up -d
+      
