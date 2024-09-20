@@ -38,9 +38,6 @@ jobs:
           echo "New version: $NEW_VERSION"
           echo "$NEW_VERSION" > version.txt  # Save the new version back to version.txt
           echo "$NEW_VERSION"  # Output the new version
-          
-        outputs:
-          new_version: $NEW_VERSION
 
       # Build Docker image with incremented version
       - name: Build image
@@ -72,10 +69,10 @@ jobs:
     - name: Print IMAGE_VERSION from building job
       run: echo "IMAGE_VERSION=${{ needs.building.outputs.image_version }}"
 
-    # - name: Update image version and restart service
-    #   run: |
-    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-    #       cd /home/jarvis/minvoice/apps/watchdog-invoice/ &&
-    #       echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ needs.building.outputs.image_version }}/g' docker-compose.yml
-    #       echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose up -d
+    - name: Update image version and restart service
+      run: |
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+          cd /home/jarvis/minvoice/apps/watchdog-invoice/ &&
+          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ needs.building.outputs.image_version }}/g' docker-compose.yml
+          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose up -d
       
