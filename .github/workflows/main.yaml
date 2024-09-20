@@ -60,10 +60,10 @@ jobs:
     - name: Print IMAGE_VERSION from building job
       run: echo "IMAGE_VERSION=${{ needs.building.outputs.new_version }}"
 
-    - name: Off service 
-      run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-        "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
+    # - name: Off service 
+    #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #     "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
 
 
     - name: Update image version and restart service
