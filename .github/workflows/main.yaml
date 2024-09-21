@@ -58,16 +58,16 @@ jobs:
 
     steps:
     - name: Print IMAGE_VERSION from building job
-      run: echo "IMAGE_VERSION=${{ needs.building.outputs.new_version }}" # DEBUG
+      run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}" 
 
     # - name: Off service 
     #   run: |
     #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
     #     "cd /home/jarvis/minvoice/apps/watchdog-invoice/ && echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker compose down"
 
-    - name: Update image version and restart service
-      run: |
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
-          cd /home/jarvis/minvoice/apps/watchdog-invoice/ &&
-          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ needs.building.outputs.new_version }}/g' docker-compose.yml
-          echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose up -d
+    # - name: Update image version and restart service
+    #   run: |
+    #     ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no jarvis@172.16.1.242 \
+    #       cd /home/jarvis/minvoice/apps/watchdog-invoice/ &&
+    #       echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S sed -i 's/hungth_connectdb:[0-9.]\+/hungth_connectdb:${{ needs.building.outputs.new_version }}/g' docker-compose.yml
+    #       echo '${{ secrets.SUDO_PASSWORD }}' | sudo -S docker-compose up -d
