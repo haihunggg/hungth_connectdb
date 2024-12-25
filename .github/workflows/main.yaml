@@ -58,7 +58,7 @@ jobs:
 
     steps:
     - name: Print IMAGE_VERSION from building job
-      run: echo "IMAGE_VERSION=${{ env.IMAGE_VERSION }}" 
+      run: echo "IMAGE_VERSION=${{ needs.building.outputs.new_version }}" 
 
     # - name: Off service 
     #   run: |
